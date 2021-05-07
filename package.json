@@ -1,0 +1,24 @@
+{
+  "name": "project_1",
+  "devDependencies": {
+    "@snowpack/plugin-postcss": "^1.2.2",
+    "@snowpack/plugin-run-script": "^2.3.0",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.2",
+    "node-gyp": "^8.0.0",
+    "postcss": "^8.2.14",
+    "postcss-cli": "^8.3.1",
+    "snowpack": "^3.3.7",
+    "tailwindcss": "^2.1.2"
+  },
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "postcss ./tailwind.css -o ./public/global.css -w"
+  },
+  "dependencies": {
+    "embla-carousel": "^4.5.1",
+    "lit": "^2.0.0-rc.1"
+  }
+}
