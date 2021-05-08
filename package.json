@@ -7,19 +7,23 @@
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.2",
     "node-gyp": "^8.0.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.2.14",
     "postcss-cli": "^8.3.1",
+    "rimraf": "^3.0.2",
     "snowpack": "^3.3.7",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "typescript": "^4.2.4"
   },
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build",
-    "test": "postcss ./tailwind.css -o ./src/global.css -w"
+    "_build": "snowpack build",
+    "build": "run-s delete_build _build",
+    "test": "postcss ./tailwind.css -o ./src/global.css -w",
+    "delete_build": "rimraf ./build/"
   },
   "dependencies": {
     "embla-carousel": "^4.5.1",
-    "lit": "^2.0.0-rc.2",
-    "typescript": "^4.2.4"
+    "lit": "^2.0.0-rc.2"
   }
 }

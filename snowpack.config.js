@@ -17,7 +17,7 @@ module.exports = {
       "@snowpack/plugin-run-script",
       {
         cmd:
-          "$env:NODE_ENV='production' postcss ./tailwind.css -o ./src/global.css -w",
+          "postcss ./tailwind.css -o ./src/global.css",
         watch:
           "postcss ./tailwind.css -o ./src/global.css -w",
       },
