@@ -5,8 +5,6 @@
 .embla {
   position: relative;
   background-color: #f7f7f7;
-  padding: 20px;
-  max-width: 670px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -41,12 +39,15 @@
 }
 
 .embla__slide__inner {
-  position: relative;
+  position: static;
   overflow: hidden;
-  height: 190px;
+  height: 370px;
 }
 
 .embla__slide__img {
+  border: darkorchid;
+  border-width: thick;
+  border-style: solid;
   position: absolute;
   display: block;
   top: 50%;
@@ -54,9 +55,10 @@
   width: auto;
   min-height: 100%;
   min-width: 100%;
-  max-width: none;
   transform: translate(-50%, -50%);
+  @apply sm:object-contain object-cover;
 }
+
 
 .embla__button {
   outline: 0;
@@ -99,6 +101,10 @@
   list-style: none;
   justify-content: center;
   padding-top: 10px;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .embla__dot {

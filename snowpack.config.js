@@ -17,9 +17,9 @@ module.exports = {
       "@snowpack/plugin-run-script",
       {
         cmd:
-          "TAILWIND_MODE=build NODE_ENV=production postcss ./tailwind.css -o ./public/global.css -w", // production build command
+          "TAILWIND_MODE=build NODE_ENV=production postcss ./tailwind.css -o ./src/global.css -w", // production build command
         watch:
-          "NODE_ENV=development postcss ./tailwind.css -o ./public/global.css -w", // (optional) dev server command
+          "NODE_ENV=development postcss ./tailwind.css -o ./src/global.css -w", // (optional) dev server command
       },
     ],
   ],

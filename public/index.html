@@ -5,35 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Starter Snowpack App" />
     <link rel="stylesheet" type="text/css" href="dist/global.css" />
-
     <title>Starter Snowpack App</title>
   </head>
 
   <body>
-    <div class="bg-gray-400 container">
-      <nav class="text-white">
-        <div class="absolute top-0 left-0 w-full z-50 py-4">
-          <div class="w-10/12 py-2 m-auto">
-            <div class="flex justify-between px-4">
-              <div>
-                <span class="inline-block p-4 px-10">logo</span>
-                <ul class="inline-block">
-                  <li class="inline-block p-4"><a>About</a></li>
-                  <li class="inline-block p-4"><a>Services</a></li>
-                  <li class="inline-block p-4"><a>Showroom</a></li>
-                  <li class="inline-block p-4"><a>Contact</a></li>
+    <div class="mx-auto">
+      <div class="relative w-full">
+        <nav
+          class="text-gray-800 font-extrabold static block w-full bg-opacity-80 z-50 m-auto"
+        >
+          <div class="relative top-0 left-0 w-full py-4">
+            <div class="w-10/12 py-2 m-auto">
+              <div class="flex flex-wrap justify-between px-4">
+                <span class="inline-block"
+                  ><img
+                    src="http://acmelogos.com/images/logo-1.svg"
+                    alt="ACME"
+                    width="120"
+                  />
+                </span>
+                <div class="flex md:hidden">
+                  <button id="hamburger">
+                    <img
+                      class="toggle block"
+                      src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png"
+                      width="40"
+                      height="40"
+                    />
+                    <img
+                      class="toggle hidden"
+                      src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png"
+                      width="40"
+                      height="40"
+                    />
+                  </button>
+                </div>
+                <ul
+                  class="toggle hidden md:flex w-full md:w-auto text-right text-bold mt-5 md:mt-0 border-t-2 md:border-none"
+                >
+                  <li
+                    class="block md:inline-block px-3 py-3 border-b-2 md:border-none"
+                  >
+                    <a>About</a>
+                  </li>
+                  <li
+                    class="block md:inline-block px-3 py-3 border-b-2 md:border-none"
+                  >
+                    <a>Services</a>
+                  </li>
+                  <li
+                    class="block md:inline-block px-3 py-3 border-b-2 md:border-none"
+                  >
+                    <a>Showroom</a>
+                  </li>
+                  <li
+                    class="block md:inline-block px-3 py-3 border-b-2 md:border-none"
+                  >
+                    <a>Contact</a>
+                  </li>
                 </ul>
-              </div>
-              <div>
-                <button class="p-4">FREE ESTIMATE</button>
+
+                <button
+                  class="toggle hidden md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white md:rounded"
+                >
+                  FREE ESTIMATE
+                </button>
               </div>
             </div>
           </div>
+        </nav>
+      </div>
+      <div class="col-span-full h-96 flex items-center justify-center z-50">
+        <div class="flex-auto relative">
+          <div class="embla">
+            <div class="embla__viewport">
+              <div class="embla__container">
+                <div class="embla__slide">
+                  <div class="embla__slide__inner">
+                    <img class="embla__slide__img" src="dist/img/1.png" />
+                  </div>
+                </div>
+                <div class="embla__slide">
+                  <div class="embla__slide__inner">
+                    <img class="embla__slide__img" src="dist/img/2.png" />
+                  </div>
+                </div>
+                <div class="embla__slide">
+                  <div class="embla__slide__inner">
+                    <img class="embla__slide__img" src="dist/img/3.jpg" />
+                  </div>
+                </div>
+                <div class="embla__slide">
+                  <div class="embla__slide__inner">
+                    <img
+                      class="embla__slide__img"
+                      src="https://via.placeholder.com/1920x1080"
+                    />
+                  </div>
+                </div>
+                <div class="embla__slide">
+                  <div class="embla__slide__inner">
+                    <img
+                      class="embla__slide__img"
+                      src="https://via.placeholder.com/1920x1080"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <button class="embla__button embla__button--prev" type="button">
+              <svg
+                class="embla__button__svg"
+                viewBox="137.718 -1.001 366.563 643.999"
+              >
+                <path
+                  d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z"
+                ></path>
+              </svg>
+            </button>
+            <button class="embla__button embla__button--next" type="button">
+              <svg class="embla__button__svg" viewBox="0 0 238.003 238.003">
+                <path
+                  d="M181.776 107.719L78.705 4.648c-6.198-6.198-16.273-6.198-22.47 0s-6.198 16.273 0 22.47l91.883 91.883-91.883 91.883c-6.198 6.198-6.198 16.273 0 22.47s16.273 6.198 22.47 0l103.071-103.039a15.741 15.741 0 0 0 4.64-11.283c0-4.13-1.526-8.199-4.64-11.313z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Dots -->
+          <div class="embla__dots"></div>
+
+          <script type="text/template" id="embla-dot-template">
+            <button class="embla__dot" type="button"></button>
+          </script>
         </div>
-      </nav>
+      </div>
       <div class="grid w-full">
         <article>
-          <div class="col-span-full"></div>
           <div class="grid-cols-12 grid col-span-full bg-white">
             <div
               class="sm:col-start-2 sm:col-span-4 block bg-white col-span-full prose py-20 px-4"
@@ -79,7 +189,7 @@
             <div
               class="sm:col-start-7 sm:col-span-6 bg-blue-700 col-span-full grid grid-cols-12 text-gray-300"
             >
-              <div class="col-start-3 col-span-5 py-20">
+              <div class="sm:col-start-3 sm:col-span-5 col-span-full mx-2 py-20">
                 <div class="border-white border-b-[1px]">
                   <h6>FOLLOW US</h6>
                   <div class="py-2">
@@ -132,7 +242,7 @@
               class="col-span-full static sm:relative sm:col-start-2 sm:col-span-12"
             >
               <span
-                class="flex items-center justify-center text-white text-2xl font-extrabold absolute w-full bg-blue-600"
+                class="flex items-center justify-center text-white text-2xl font-extrabold relative w-full bg-blue-600"
                 style="top: -3em; padding: 3rem 0"
                 >OUR SERVICES</span
               >
@@ -161,12 +271,13 @@
             </div>
           </div>
           <footer class="grid">
-            <div class="block col-span-full bg-white">
+            <div class="bg-gray-100 relative">
+
               <div
-                class="bg-blue-600 absolute float-left py-20"
+                class="bg-blue-600 sm:float-left sm:absolute m-auto sm:w-10/12 py-4"
               >
                 <div
-                  class="flex flex-col items-center justify-center m-auto w-1/2"
+                  class="flex flex-col items-center justify-center m-auto w-8/12"
                 >
                   <h4 class="text-center text-white uppercase font-bold">
                     “Chris, Jessie and their team are professional and
@@ -178,9 +289,10 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-full bg-blue-900 text-gray-300">
+            <div class="bg-gray-100 w-full static h-24"></div>
+            <div class="col-span-full bg-blue-900 text-gray-300 pt-24">
               <div class="w-10/12 m-auto">
-                <div class="p-20 grid grid-cols-12">
+                <div class="py-20 grid grid-cols-6 sm:grid-cols-12">
                   <div class="col-span-6">
                     <h3 class="text-lg">
                       Signature Kitchen and Bath is a Division of Signature
@@ -193,14 +305,16 @@
                     </p>
                     <a>Learn More</a>
                   </div>
-                  <div class="col-span-6">
-                    <div class="bg-black h-32 w-32 float-right"></div>
+                  <div class="col-span-6 flex items-center justify-center">
+                    <div class="bg-black h-32 w-32 sm:float-right"></div>
                   </div>
                   <div
                     class="col-span-full border-white border-b-[1px] mt-10"
                   ></div>
                   <div class="col-span-full border-white border-b-[1px]">
-                    <div class="grid grid-cols-12 col-span-full my-10">
+                    <div
+                      class="grid grid-cols-4 sm:grid-cols-12 col-span-full my-10"
+                    >
                       <div
                         class="col-span-4 flex flex-col items-center justify-center p-2"
                       >
@@ -241,63 +355,6 @@
           </footer>
         </article>
       </div>
-      <div class="embla">
-        <div class="embla__viewport">
-          <div class="embla__container">
-            <div class="embla__slide">
-              <div class="embla__slide__inner">
-                <img class="embla__slide__img" />
-              </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__inner">
-                <img class="embla__slide__img" />
-              </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__inner">
-                <img class="embla__slide__img" />
-              </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__inner">
-                <img class="embla__slide__img" />
-              </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__inner">
-                <img class="embla__slide__img" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Buttons -->
-        <button class="embla__button embla__button--prev" type="button">
-          <svg
-            class="embla__button__svg"
-            viewBox="137.718 -1.001 366.563 643.999"
-          >
-            <path
-              d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z"
-            ></path>
-          </svg>
-        </button>
-        <button class="embla__button embla__button--next" type="button">
-          <svg class="embla__button__svg" viewBox="0 0 238.003 238.003">
-            <path
-              d="M181.776 107.719L78.705 4.648c-6.198-6.198-16.273-6.198-22.47 0s-6.198 16.273 0 22.47l91.883 91.883-91.883 91.883c-6.198 6.198-6.198 16.273 0 22.47s16.273 6.198 22.47 0l103.071-103.039a15.741 15.741 0 0 0 4.64-11.283c0-4.13-1.526-8.199-4.64-11.313z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Dots -->
-      <div class="embla__dots"></div>
-
-      <script type="text/template" id="embla-dot-template">
-        <button class="embla__dot" type="button"></button>
-      </script>
     </div>
 
     <script type="module" src="dist/index.js"></script>
