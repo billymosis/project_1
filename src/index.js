@@ -62,6 +62,14 @@ const selectDotBtn = (dotsArray, embla) => () => {
   dotsArray[selected].classList.add("is-selected");
 };
 
+const toggleEmblaReady = (event) => {
+  const isResizeEvent = event === "resize";
+  const toggleClass = isResizeEvent ? "remove" : "add";
+  viewPort.classList[toggleClass]("embla--is-ready");
+  if (isResizeEvent) embla.reInit();
+};
+
+
 const wrap = document.querySelector(".embla");
 const viewPort = wrap.querySelector(".embla__viewport");
 const prevBtn = wrap.querySelector(".embla__button--prev");
@@ -71,15 +79,19 @@ const embla = EmblaCarousel(viewPort, { loop: true, skipSnaps: false });
 const dotsArray = generateDotBtns(dots, embla);
 const setSelectedDotBtn = selectDotBtn(dotsArray, embla);
 const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla);
-const auto = autoPlay(embla, 2000);
+const auto = autoPlay(embla, 1000);
 
 setupPrevNextBtns(prevBtn, nextBtn, embla);
 setupDotBtns(dotsArray, embla);
 
-embla.on("select", setSelectedDotBtn);
-embla.on("select", disablePrevAndNextBtns);
-embla.on("init", setSelectedDotBtn);
-embla.on("init", disablePrevAndNextBtns);
+embla
+  .on("select", setSelectedDotBtn)
+  .on("select", disablePrevAndNextBtns)
+  .on("init", setSelectedDotBtn)
+  .on("init", disablePrevAndNextBtns)
+  .on("init", toggleEmblaReady)
+  .on("resize", toggleEmblaReady)
+  .on("reInit", toggleEmblaReady);
 
 viewPort.addEventListener('mouseenter', auto.stop, false);
 viewPort.addEventListener('mouseleave', auto.play, false);
@@ -87,9 +99,12 @@ viewPort.addEventListener('touchstart', auto.stop, false);
 viewPort.addEventListener('touchend', auto.play, false);
 auto.play();
 
+embla.dangerouslyGetEngine().translate.toggleActive(false);
+
 document.getElementById("hamburger").onclick = function toggleMenu() {
   const navToggle = document.getElementsByClassName("toggle");
   for (let i = 0; i < navToggle.length; i++) {
     navToggle.item(i).classList.toggle("hidden");
   }
 };
+

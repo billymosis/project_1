@@ -15,10 +15,11 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
-    "test": "postcss ./tailwind.css -o ./public/global.css -w"
+    "test": "postcss ./tailwind.css -o ./src/global.css -w"
   },
   "dependencies": {
     "embla-carousel": "^4.5.1",
-    "lit": "^2.0.0-rc.1"
+    "lit": "^2.0.0-rc.2",
+    "typescript": "^4.2.4"
   }
 }
