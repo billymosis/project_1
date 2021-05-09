@@ -4,6 +4,7 @@
     "@snowpack/plugin-postcss": "^1.2.2",
     "@snowpack/plugin-run-script": "^2.3.0",
     "@tailwindcss/typography": "^0.4.0",
+    "@types/glidejs__glide": "^3.4.0",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.2",
     "node-gyp": "^8.0.0",
@@ -23,7 +24,7 @@
     "delete_build": "rimraf ./build/"
   },
   "dependencies": {
-    "embla-carousel": "^4.5.1",
+    "@glidejs/glide": "^3.4.1",
     "lit": "^2.0.0-rc.2"
   }
 }

@@ -30,6 +30,11 @@
   dependencies:
     purgecss "^3.1.3"
 
+"@glidejs/glide@^3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.4.1.tgz#8ad21f3169076e32bbfd75ed0753807662c25e90"
+  integrity sha512-C34AEcK1HjSyxilRToUL54I6KAoodojUbeRlXoruobZuG0eGm8xfDL+3kgkWj7AJK4EZtunSOYfoqMp70eDtwg==
+
 "@lit/reactive-element@^1.0.0-rc.2":
   version "1.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/@lit/reactive-element/-/reactive-element-1.0.0-rc.2.tgz#f24dba16ea571a08dca70f1783bd2ca5ec8de3ee"
@@ -144,6 +149,11 @@
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.1.1.tgz#3348564048e7a2d7398c935d466c0414ebb6a669"
   integrity sha512-Z6DoceYb/1xSg5+e+ZlPZ9v0N16ZvZ+wYMraFue4HYrE4ttONKtsvruIRf6t9TBR0YvSOfi1hUU0fJfBLCDYow==
+
+"@types/glidejs__glide@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@types/glidejs__glide/-/glidejs__glide-3.4.0.tgz#7a557c921f85e47549c12d6cd62afe3230ae8042"
+  integrity sha512-LwOWY79RczNq18OZakHc3IXL1rfz27Rei83371Z45bDeI7UZfEiQPfqcHyxxuH51QwU+Rnww8y3rQzf9FBTSAw==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -854,11 +864,6 @@ electron-to-chromium@^1.3.723:
   version "1.3.727"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.727.tgz#857e310ca00f0b75da4e1db6ff0e073cc4a91ddf"
   integrity sha512-Mfz4FIB4FSvEwBpDfdipRIrwd6uo8gUDoRDF4QEYb4h4tSuI3ov594OrjU6on042UlFHouIJpClDODGkPcBSbg==
-
-embla-carousel@^4.5.1:
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-4.5.1.tgz#db4b44c8f7e96ab4af1ee4afaa1bb22c06b51065"
-  integrity sha512-E55z44S/gduwUNq8APVYAvzFUrIuzgBckx0Dl/j6QFdwWSkRbPkqmEI9WSMvtpAeGEz5xFBdnYeb5eXWsmCGoA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"

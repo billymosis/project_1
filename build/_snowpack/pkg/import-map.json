@@ -1,6 +1,6 @@
 {
   "imports": {
-    "embla-carousel": "./embla-carousel.js",
+    "@glidejs/glide": "./@glidejs/glide.js",
     "lit": "./lit.js",
     "lit/decorators.js": "./lit/decorators.js"
   }
