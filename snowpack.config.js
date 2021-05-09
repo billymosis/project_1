@@ -4,6 +4,9 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 
 const MYCONFIG = {
+  buildOptions:{
+    out: "./docs/"
+  },
   devOptions: {
     port: 3000,
   },

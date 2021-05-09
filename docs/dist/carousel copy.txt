@@ -1,0 +1,157 @@
+import { css, html, LitElement } from "lit";
+import { customElement } from "lit/decorators.js";
+
+@customElement("my-carousel")
+export class MyCarousel extends LitElement {
+  static styles = css`
+    .carousel-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+    .carousel-wrapper * {
+      box-sizing: border-box;
+    }
+    .carousel {
+      transform-style: preserve-3d;
+    }
+
+    .carousel__photo {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 600px;
+      margin: auto;
+      z-index: 100;
+      /*  IF MOVING transition: transform 0.5s, opacity 0.5s, z-index 0.5s; */
+      transition: opacity 1s;
+      object-fit: cover;
+    }
+
+    .carousel__photo.initial,
+    .carousel__photo.active {
+      opacity: 1;
+      position: relative;
+      z-index: 900;
+    }
+
+    .carousel__photo.prev,
+    .carousel__photo.next {
+      z-index: 800;
+    }
+
+    .carousel__button--prev,
+    .carousel__button--next {
+      position: absolute;
+      top: 50%;
+      width: 3rem;
+      height: 3rem;
+      background-color: #ffffff;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1001; /* Sit on top of everything */
+      border: 1px solid black;
+    }
+    .carousel__button--prev {
+      left: 0;
+    }
+    .carousel__button--next {
+      right: 0;
+    }
+    .carousel__button--prev::after,
+    .carousel__button--next::after {
+      content: " ";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      left: 54%;
+      border-right: 2px solid black;
+      border-bottom: 2px solid black;
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+    .carousel__button--next::after {
+      left: 47%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  `;
+
+  itemClassName = "carousel__photo";
+  sources = [
+    "dist/img/1.jpg",
+    "dist/img/2.jpg",
+    "dist/img/3.jpg",
+    "dist/img/3.jpg",
+    "dist/img/2.jpg",
+  ];
+  items = this.sources.map((_) => document.createElement("img"));
+  totalItems = this.sources.length - 1;
+  slide: number = 0;
+  moving: boolean = true;
+
+  setInitialClasses() {
+    this.items[0].classList.add("active");
+    this.items[1].classList.add("next");
+    this.items[this.totalItems].classList.add("prev");
+  }
+
+  moveNext() {
+    if (!this.moving) {
+      this.slide = (this.slide + 1) % this.items.length;
+      this.moveCarouselTo(this.slide);
+    }
+  }
+
+  movePrev() {
+    if (!this.moving) {
+      this.slide = (this.slide - 1 + this.items.length) % this.items.length;
+      this.moveCarouselTo(this.slide);
+    }
+  }
+
+  disableInteraction() {
+    this.moving = true;
+    setTimeout(() => {
+      this.moving = false;
+    }, 500);
+  }
+
+  moveCarouselTo(slide: number) {
+    if (!this.moving) {
+      this.disableInteraction();
+      let prev = (this.slide - 1 + this.items.length) % this.items.length;
+      let next = (this.slide + 1) % this.items.length;
+      let prev2 = (slide - 1 + this.items.length) % this.items.length;
+      let next2 = (slide + 1) % this.items.length;
+      this.items[prev2].className = this.itemClassName;
+      this.items[next2].className = this.itemClassName;
+      this.items[slide].className = this.itemClassName + " active";
+      this.items[prev].className = this.itemClassName + " prev";
+      this.items[next].className = this.itemClassName + " next";
+    }
+  }
+
+  initCarousel() {
+    this.sources.map((x, i) => this.items[i].setAttribute("src", x));
+    this.items.map((x, i) => {
+      x.classList.add("carousel__photo");
+      i == 0 && x.classList.add("initial");
+    });
+    this.setInitialClasses();
+    this.moving = false;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.initCarousel();
+  }
+  render() {
+    return html` <div class="carousel-wrapper">
+      <div class="carousel">
+        ${this.items}
+        <div @click=${this.moveNext} class="carousel__button--next"></div>
+        <div @click=${this.movePrev} class="carousel__button--prev"></div>
+      </div>
+    </div>`;
+  }
+}
