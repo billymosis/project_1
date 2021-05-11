@@ -29,5 +29,6 @@
   },
   "include": ["src/**/*.ts"],
   "exclude": [],
-  "experimentalDecorators": true
+  "experimentalDecorators": true,
+  "resolveJsonModule": true
 }

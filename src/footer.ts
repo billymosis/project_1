@@ -5,20 +5,17 @@ import { customElement } from "lit/decorators.js";
 export class MyFooter extends LitElement {
   render() {
     return html`<footer class="grid">
-      <div class="bg-gray-100 w-full static sm:h-24"></div>
       <div class="col-span-full bg-blue-900 text-gray-200 pt-16 sm:pt-48">
         <div class="w-10/12 m-auto">
           <div class="pb-20 grid grid-cols-6 sm:grid-cols-12">
             <div class="col-span-6">
               <h3 class="text-lg">PT. Langgeng Prayadena Amini</h3>
               <p class="text-sm">
-                PT. LPA adalah perusahaan manufaktur, pemasangan dan desain
-                pintu dan jendela. Siap melayani dimanapun lokasi anda. Khusus
-                wilayah Malang kami langsung datang!
+                Kami siap melayani dimanapun lokasi anda. Khusus
+                wilayah Malang kami akan langsung datang!
               </p>
-              <a class="mt-4 block">Baca seterusnya ...</a>
             </div>
-            <div class="col-span-6 flex items-center justify-center">
+            <div class="col-span-6 flex items-center justify-center my-8">
               <div
                 class="w-full flex items-center justify-items-center m-auto sm:float-right"
               >
@@ -32,9 +29,9 @@ export class MyFooter extends LitElement {
                   class="col-span-4 flex flex-col items-center justify-center p-2"
                 >
                   <a
-                    href="tel:0341801296"
+                    href="tel:0341805738"
                     class="text-lg font-extrabold underline"
-                    >(0341)801296</a
+                    >(0341)805738</a
                   >
                   <a
                     href="tel:628123393111"

@@ -4,21 +4,22 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 
 const MYCONFIG = {
-  buildOptions:{
-    out: "./docs/"
+
+  buildOptions: {
+    out: "./docs/",
   },
   devOptions: {
     port: 3000,
   },
   optimize: {
-    bundle: false,
-    minify: false,
-    treeshake: false,
+    bundle: true,
+    minify: true,
+    treeshake: true,
     preload: false,
   },
   mount: {
     src: "/dist",
-    public: "/",
+    public: {url: "/", static: true},
   },
   plugins: [
     [
@@ -30,12 +31,12 @@ const MYCONFIG = {
     ],
   ],
 };
-if (process.env.NODE_ENV === "productionx") {
+if (process.env.NODE_ENV === "production") {
   console.log(MYCONFIG);
   MYCONFIG.optimize.bundle = true;
   MYCONFIG.optimize.minify = true;
   MYCONFIG.optimize.treeshake = true;
   MYCONFIG.optimize.target = "es2018";
-  // MYCONFIG.optimize.preload = true;
 }
+
 module.exports = MYCONFIG;

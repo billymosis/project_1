@@ -21,7 +21,7 @@
     "_build": "snowpack build",
     "build": "run-s delete_build _build",
     "test": "postcss ./tailwind.css -o ./src/global.css -w",
-    "delete_build": "rimraf ./build/"
+    "delete_build": "rimraf ./docs/"
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
