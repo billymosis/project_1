@@ -4,7 +4,6 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 
 const MYCONFIG = {
-
   buildOptions: {
     out: "./docs/",
   },
@@ -12,9 +11,9 @@ const MYCONFIG = {
     port: 3000,
   },
   optimize: {
-    bundle: true,
-    minify: true,
-    treeshake: true,
+    bundle: false,
+    minify: false,
+    treeshake: false,
     preload: false,
   },
   mount: {
@@ -25,18 +24,18 @@ const MYCONFIG = {
     [
       "@snowpack/plugin-run-script",
       {
-        cmd: "postcss ./tailwind.css -o ./src/global.css",
-        watch: "postcss ./tailwind.css -o ./src/global.css -w",
+        cmd: "tailwindcss -i ./tailwind.css -o ./src/global.css",
+        watch: "tailwindcss -i ./tailwind.css -o ./src/global.css --watch",
       },
     ],
   ],
 };
 if (process.env.NODE_ENV === "production") {
-  console.log(MYCONFIG);
   MYCONFIG.optimize.bundle = true;
   MYCONFIG.optimize.minify = true;
   MYCONFIG.optimize.treeshake = true;
   MYCONFIG.optimize.target = "es2018";
+  console.log(MYCONFIG);
 }
 
 module.exports = MYCONFIG;

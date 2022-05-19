@@ -950,10 +950,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: auto;
 }
 
-.m-24 {
-  margin: 6rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1165,8 +1161,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.p-64 {
-  padding: 16rem;
+.p-12 {
+  padding: 3rem;
 }
 
 .p-2 {
@@ -1175,22 +1171,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-10 {
-  padding: 2.5rem;
-}
-
-.p-32 {
-  padding: 8rem;
-}
-
-.p-24 {
-  padding: 6rem;
-}
-
-.p-12 {
-  padding: 3rem;
 }
 
 .py-4 {
@@ -1416,10 +1396,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:bg-transparent {
     background-color: transparent;
-  }
-
-  .sm\:p-12 {
-    padding: 3rem;
   }
 
   .sm\:py-20 {
